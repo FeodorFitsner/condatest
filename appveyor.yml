@@ -27,6 +27,7 @@ install:
   - pip install jupyter_client
   - pip install ipykernel
   - pip install ipython
+  - pip install pandas
 
 test_script: 
 #  - python run_all_tests.py
