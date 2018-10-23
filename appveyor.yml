@@ -14,7 +14,6 @@ install:
   - "set PATH=%MINICONDA%;%MINICONDA%\\Scripts;%PATH%" 
   - conda config --set always_yes yes --set changeps1 no 
   - conda update -q conda 
-  - conda update ipython
   - conda env list
   - conda info -a 
   - conda config --add channels bashtage 
@@ -27,6 +26,7 @@ install:
   - pip install nbconvert
   - pip install jupyter_client
   - pip install ipykernel
+  - pip install ipython
 
 test_script: 
 #  - python run_all_tests.py
