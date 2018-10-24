@@ -16,7 +16,8 @@ install:
   - conda update -q conda 
   - conda env list
   - conda info -a 
-  - conda config --add channels bashtage 
+  - conda config --add channels bashtage
+  - conda config --add channels conda-forge
   - conda install arch -y
   - "conda create -q -n test-environment python=%PYTHON_VERSION% numpy python-dateutil pyparsing pytz tornado cycler tk libpng zlib freetype pandas ipython scipy flake8 tabulate" 
   - activate matplotlib_build
