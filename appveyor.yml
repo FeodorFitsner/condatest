@@ -26,6 +26,7 @@ install:
   - pip install nbconvert
   - pip install jupyter_client
   - pip install ipykernel
+  - python3 -c 'import matplotlib; print(matplotlib.__version__, matplotlib.__file__)'
   # - pip install ipython
   # - pip install pandas
 
