@@ -18,15 +18,16 @@ install:
   - conda info -a 
   - conda config --add channels bashtage 
   - conda install arch -y
-  - "conda create -q -n test-environment python=%PYTHON_VERSION% numpy pandas ipython scipy matplotlib flake8 tabulate" 
+  - "conda create -q -n test-environment python=%PYTHON_VERSION% numpy python-dateutil pyparsing pytz tornado cycler tk libpng zlib freetype pandas ipython scipy flake8 tabulate" 
+  - activate matplotlib_build
   - activate test-environment 
   - python -m pip install --upgrade pip
+  - conda install pyqt
   - pip install pywin32
   - pip install nbformat
   - pip install nbconvert
   - pip install jupyter_client
   - pip install ipykernel
-  - python3 -c 'import matplotlib; print(matplotlib.__version__, matplotlib.__file__)'
   # - pip install ipython
   # - pip install pandas
 
