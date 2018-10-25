@@ -32,12 +32,14 @@ def _process_notebook(path):
     '''
     # in_file = '/home/travis/build/RookinsAndBear/TestingTravisCI/adam_home/demos/Orbit_Period_Uncertainty_Trending_demo.ipynb'
     dirname, in_file = os.path.split(path)
-    os.chdir(dirname)
+    #os.chdir(dirname)
     # convert *.ipynb from jupyter notebook to py notebook
     with tempfile.NamedTemporaryFile(suffix=".ipynb") as fout:
         args = ["jupyter", "nbconvert", "--to", "notebook", "--execute",
                 "--ExecutePreprocessor.timeout=120",
-                "--output", fout.name, path]
+                "--ExecutePreprocessor.kernel_name=python3",
+                #"--output", fout.name , path]
+                "--output", os.getcwd() + "/temp102218" , path]
         # submodule allows you to spawn new processes, connect to their input/
         # output/error pipes, and obtain their return codes.
         subprocess.check_call(args)
@@ -49,23 +51,23 @@ def _process_notebook(path):
                 for output in cell["outputs"]\
                 if output.output_type == "AssertionError"]
 
-    for out in nb.cells:
-        if out.output_type == 'error':
-            raise RuntimeError('Error executing the notebook.')
+    # for out in nb.cells:
+    #    if out.output_type == 'error':
+    #        raise RuntimeError('Error executing the notebook.')
 
 
-    try:
-        out = ExecutePreprocessor.preprocess(nb, {'metadata': {'path': path}})
-    except CellExecutionError:
-        out = None
-        msg = 'Error executing the notebook "%s".\n\n' % notebook_filename
-        msg += 'See notebook "%s" for the traceback.' % notebook_filename_out
-        print(msg)
-        raise
-    finally:
-        nb_out = 'JN_execute_out'
-        with open(nb_out, mode='wt') as f:
-            nbformat.write(nb, f)
+    #try:
+    #    out = ExecutePreprocessor.preprocess(nb, {'metadata': {'path': path}})
+    #except CellExecutionError:
+    #    out = None
+    #    msg = 'Error executing the notebook "%s".\n\n' % notebook_filename
+    #    msg += 'See notebook "%s" for the traceback.' % notebook_filename_out
+    #    print(msg)
+    #    raise
+    #finally:
+    #    nb_out = 'JN_execute_out'
+    #    with open(nb_out, mode='wt') as f:
+    #        nbformat.write(nb, f)
 
     return nb, errors
 
@@ -77,8 +79,8 @@ def test():
     # appveyor
     notebook_path = cwd + '/tests/example.ipynb'
     _exec_notebook(notebook_path)
-    # nb, errors = _process_notebook(notebook_path)
-    # assert errors == []
+    nb, errors = _process_notebook(notebook_path)
+    assert errors == []
     # _exec_notebook('/home/travis/build/RookinsAndBear/TestingTravisCI/adam_home/demos/example.ipynb')
     # _exec_notebook('/home/travis/build/RookinsAndBear/TestingTravisCI/adam_home/demos/Orbit_Period_Uncertainty_Trending_demo.ipynb') 
     # nb, errors = _process_notebook('/home/travis/build/RookinsAndBear/TestingTravisCI/adam_home/demos/Orbit_Period_Uncertainty_Trending_demo.ipynb')
