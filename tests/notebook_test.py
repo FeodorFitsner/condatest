@@ -42,7 +42,7 @@ def _process_notebook(path):
                 "--ExecutePreprocessor.timeout=120",
                 "--ExecutePreprocessor.kernel_name=python3",
                 #"--output", fout.name , path]
-                "--output", os.getcwd() + "/temp110118" , path]
+                "--output", os.getcwd() + "\\temp110118" , path]
         # submodule allows you to spawn new processes, connect to their input/
         # output/error pipes, and obtain their return codes.
         print(" ".join(args))
