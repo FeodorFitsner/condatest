@@ -76,7 +76,7 @@ def _process_notebook(path):
     return nb, errors
 
 def test():
-    # cwd = os.getcwd()
+    cwd = os.getcwd()
     # print(cwd)
     # local
     # notebook_path = cwd + '/TestingAppVeyor/tests/example.ipynb'
