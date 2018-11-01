@@ -9,8 +9,8 @@ def _exec_notebook(path):
     ''' 
         Execute a jupyter notebook via nbconvert.
     '''
-    print("path passed in: ", path)
-    print("os.getcwd: ", os.getcwd())
+    print("exec notebookt path passed in: ", path)
+    print("exec notebook os.getcwd: ", os.getcwd())
     with tempfile.NamedTemporaryFile(suffix=".ipynb") as fout:
         args = ["jupyter", "nbconvert",
                 "--to", "notebook", "--execute",
@@ -32,6 +32,8 @@ def _process_notebook(path):
     '''
     # in_file = '/home/travis/build/RookinsAndBear/TestingTravisCI/adam_home/demos/Orbit_Period_Uncertainty_Trending_demo.ipynb'
     dirname, in_file = os.path.split(path)
+    print("process notebookt path passed in: ", path)
+    print("process notebook os.getcwd: ", os.getcwd())
     #os.chdir(dirname)
     # convert *.ipynb from jupyter notebook to py notebook
     with tempfile.NamedTemporaryFile(suffix=".ipynb") as fout:
@@ -39,7 +41,7 @@ def _process_notebook(path):
                 "--ExecutePreprocessor.timeout=120",
                 "--ExecutePreprocessor.kernel_name=python3",
                 #"--output", fout.name , path]
-                "--output", os.getcwd() + "/temp102218" , path]
+                "--output", os.getcwd() + "/temp110118" , path]
         # submodule allows you to spawn new processes, connect to their input/
         # output/error pipes, and obtain their return codes.
         subprocess.check_call(args)
