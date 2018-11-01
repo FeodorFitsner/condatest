@@ -76,13 +76,13 @@ def _process_notebook(path):
     return nb, errors
 
 def test():
-    cwd = os.getcwd()
-    print(cwd)
+    # cwd = os.getcwd()
+    # print(cwd)
     # local
     # notebook_path = cwd + '/TestingAppVeyor/tests/example.ipynb'
     # appveyor
     notebook_path = cwd + '/tests/example.ipynb'
-    _exec_notebook(notebook_path)
+    # _exec_notebook(notebook_path)
     nb, errors = _process_notebook(notebook_path)
     assert errors == []
     # _exec_notebook('/home/travis/build/RookinsAndBear/TestingTravisCI/adam_home/demos/example.ipynb')
