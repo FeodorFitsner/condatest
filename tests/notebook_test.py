@@ -37,13 +37,15 @@ def _process_notebook(path):
     #os.chdir(dirname)
     # convert *.ipynb from jupyter notebook to py notebook
     with tempfile.NamedTemporaryFile(suffix=".ipynb") as fout:
-        args = ["jupyter", "nbconvert", "--to", "notebook", "--execute",
+        args = ["jupyter", "nbconvert",
+                "--to", "notebook", "--execute",
                 "--ExecutePreprocessor.timeout=120",
                 "--ExecutePreprocessor.kernel_name=python3",
                 #"--output", fout.name , path]
                 "--output", os.getcwd() + "/temp110118" , path]
         # submodule allows you to spawn new processes, connect to their input/
         # output/error pipes, and obtain their return codes.
+        print(" ".join(args))
         subprocess.check_call(args)
         # seek() sets the file's current position.
         fout.seek(0)
