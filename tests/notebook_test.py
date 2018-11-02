@@ -31,7 +31,7 @@ def _process_notebook(path):
                     execution errors
     '''
     # in_file = '/home/travis/build/RookinsAndBear/TestingTravisCI/adam_home/demos/Orbit_Period_Uncertainty_Trending_demo.ipynb'
-    dirname, in_file = os.path.split(path)
+    # dirname, in_file = os.path.split(path)
     print("process notebookt path passed in: ", path)
     print("process notebook os.getcwd: ", os.getcwd())
     #os.chdir(dirname)
@@ -51,27 +51,27 @@ def _process_notebook(path):
         fout.seek(0)
         nb = nbformat.read(os.getcwd() + "/temp110118.ipynb", nbformat.current_nbformat)
 
+    #errors = [output for cell in nb.cells if "outputs" in cell
+    #            for output in cell["outputs"]\
+    #            if output.output_type == "AssertionError"]
+
     errors = [output for cell in nb.cells if "outputs" in cell
                 for output in cell["outputs"]\
-                if output.output_type == "AssertionError"]
-
-    for out in nb.cells:
-        if out.output_type == 'error':
-            raise RuntimeError('Error executing the notebook.')
+                if output.output_type == "stream"]
 
 
-    #try:
-    #    out = ExecutePreprocessor.preprocess(nb, {'metadata': {'path': path}})
-    #except CellExecutionError:
-    #    out = None
-    #    msg = 'Error executing the notebook "%s".\n\n' % notebook_filename
-    #    msg += 'See notebook "%s" for the traceback.' % notebook_filename_out
-    #    print(msg)
-    #    raise
-    #finally:
-    #    nb_out = 'JN_execute_out'
-    #    with open(nb_out, mode='wt') as f:
-    #        nbformat.write(nb, f)
+#    try:
+#        out = ExecutePreprocessor.preprocess(nb, {'metadata': {'path': path}})
+#    except CellExecutionError:
+#        out = None
+#        msg = 'Error executing the notebook .\n\n'
+#        msg += 'See notebook for the traceback.'
+#        print(msg)
+#        raise
+#    finally:
+#        nb_out = 'JN_execute_out'
+#        with open(nb_out, mode='wt') as f:
+#            nbformat.write(nb, f)
 
     return nb, errors
 
@@ -79,20 +79,14 @@ def test():
     cwd = os.getcwd()
     print(cwd)
     # local
-    # notebook_path = cwd + '/PublicAppVeyor/tests/example.ipynb'
+    notebook_path = cwd + '/PublicAppVeyor/tests/example.ipynb'
     # appveyor
-    notebook_path = cwd + '/tests/example.ipynb'
+    #notebook_path = cwd + '/tests/example.ipynb'
     #_exec_notebook(notebook_path)
     nb, errors = _process_notebook(notebook_path)
-    assert errors == []
 
-    # _exec_notebook('/home/travis/build/RookinsAndBear/TestingTravisCI/adam_home/demos/example.ipynb')
-    # _exec_notebook('/home/travis/build/RookinsAndBear/TestingTravisCI/adam_home/demos/Orbit_Period_Uncertainty_Trending_demo.ipynb') 
-    # nb, errors = _process_notebook('/home/travis/build/RookinsAndBear/TestingTravisCI/adam_home/demos/Orbit_Period_Uncertainty_Trending_demo.ipynb')
-    # notebook_path = cwd + 'tests/Orbit_Period_Uncertainty_Trending_demo.ipynb'
-    # nb, errors = _process_notebook(notebook_path)
     # assert that errors is empty, otherwise fail
-    # assert errors == []
+    assert errors == []
 
 def main():
     test()
