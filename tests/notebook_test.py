@@ -55,9 +55,9 @@ def _process_notebook(path):
                 for output in cell["outputs"]\
                 if output.output_type == "AssertionError"]
 
-    # for out in nb.cells:
-    #    if out.output_type == 'error':
-    #        raise RuntimeError('Error executing the notebook.')
+    for out in nb.cells:
+        if out.output_type == 'error':
+            raise RuntimeError('Error executing the notebook.')
 
 
     #try:
