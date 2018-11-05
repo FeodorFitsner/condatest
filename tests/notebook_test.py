@@ -9,8 +9,8 @@ def _exec_notebook(path):
     ''' 
         Execute a jupyter notebook via nbconvert.
     '''
-    print("exec notebookt path passed in: ", path)
-    print("exec notebook os.getcwd: ", os.getcwd())
+    # print("exec notebookt path passed in: ", path)
+    # print("exec notebook os.getcwd: ", os.getcwd())
     with tempfile.NamedTemporaryFile(suffix=".ipynb") as fout:
         args = ["jupyter", "nbconvert",
                 "--to", "notebook", "--execute",
@@ -32,8 +32,8 @@ def _process_notebook(path):
     '''
     # in_file = '/home/travis/build/RookinsAndBear/TestingTravisCI/adam_home/demos/Orbit_Period_Uncertainty_Trending_demo.ipynb'
     # dirname, in_file = os.path.split(path)
-    print("process notebookt path passed in: ", path)
-    print("process notebook os.getcwd: ", os.getcwd())
+    # print("process notebookt path passed in: ", path)
+    # print("process notebook os.getcwd: ", os.getcwd())
     #os.chdir(dirname)
     # convert *.ipynb from jupyter notebook to py notebook
     with tempfile.NamedTemporaryFile(suffix=".ipynb") as fout:
@@ -42,36 +42,29 @@ def _process_notebook(path):
                 "--ExecutePreprocessor.timeout=120",
                 "--ExecutePreprocessor.kernel_name=python3",
                 #"--output", fout.name , path]
-                "--output", os.getcwd() + "/temp110118" , path]
+                "--output", os.getcwd() + "/temp110518" , path]
         # submodule allows you to spawn new processes, connect to their input/
         # output/error pipes, and obtain their return codes.
-        print(" ".join(args))
+        # print(" ".join(args))
         subprocess.check_call(args)
         # seek() sets the file's current position.
         fout.seek(0)
-        nb = nbformat.read(os.getcwd() + "/temp110118.ipynb", nbformat.current_nbformat)
+        nb = nbformat.read(os.getcwd() + "/temp110518.ipynb", nbformat.current_nbformat)
 
     #errors = [output for cell in nb.cells if "outputs" in cell
     #            for output in cell["outputs"]\
     #            if output.output_type == "AssertionError"]
 
-    errors = [output for cell in nb.cells if "outputs" in cell
+    stream_type = [output for cell in nb.cells if "outputs" in cell
                 for output in cell["outputs"]\
                 if output.output_type == "stream"]
 
+    errors = 0
+    for i in stream_type:
+        make_str = str(i)
 
-#    try:
-#        out = ExecutePreprocessor.preprocess(nb, {'metadata': {'path': path}})
-#    except CellExecutionError:
-#        out = None
-#        msg = 'Error executing the notebook .\n\n'
-#        msg += 'See notebook for the traceback.'
-#        print(msg)
-#        raise
-#    finally:
-#        nb_out = 'JN_execute_out'
-#        with open(nb_out, mode='wt') as f:
-#            nbformat.write(nb, f)
+        if '***Test Failed***' in make_str: # use doctest for unique string
+            errors = 1
 
     return nb, errors
 
@@ -86,7 +79,9 @@ def test():
     nb, errors = _process_notebook(notebook_path)
 
     # assert that errors is empty, otherwise fail
-    assert errors == []
+    # assert errors == []
+    # assert that errors is 0, otherwise fail
+    assert errors == 0, 'Executed Notebook Returned with ERRORS'
 
 def main():
     test()
