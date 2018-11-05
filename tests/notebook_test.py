@@ -62,9 +62,10 @@ def _process_notebook(path):
     errors = 0
     for i in stream_type:
         make_str = str(i)
-
-        if '***Test Failed***' in make_str: # use doctest for unique string
+        # use doctest for unique string or set string message with unittest
+        if '***Test Failed***' in make_str: 
             errors = 1
+            # print(i)
 
     return nb, errors
 
