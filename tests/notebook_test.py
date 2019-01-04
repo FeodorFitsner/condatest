@@ -42,7 +42,8 @@ def _process_notebook(path):
                 "--ExecutePreprocessor.timeout=120",
                 "--ExecutePreprocessor.kernel_name=python3",
                 #"--output", fout.name , path]
-                "--output", os.getcwd() + "/temp110518" , path]
+                #"--output", os.getcwd() + "/temp110518" , path]
+                "--output", os.getcwd() , path]
         # submodule allows you to spawn new processes, connect to their input/
         # output/error pipes, and obtain their return codes.
         # print(" ".join(args))
@@ -73,6 +74,7 @@ def test():
     cwd = os.getcwd()
     print(cwd)
     # local
+    # export PYTHONPATH=${PYTHONPATH}:/home/travis/build/B612-Asteroid-Institute/adam_home
     # notebook_path = cwd + '/PublicAppVeyor/tests/example.ipynb'
     notebook_path = cwd + '/tests/single_run_demo.ipynb'
     # appveyor
