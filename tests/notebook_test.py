@@ -78,7 +78,7 @@ def test():
     # notebook_path = cwd + '/PublicAppVeyor/tests/example.ipynb'
     #notebook_path = cwd + '/tests/single_run_demo.ipynb'
     # appveyor
-     notebook_path = cwd + '/tests/example.ipynb'
+    notebook_path = cwd + '/tests/example.ipynb'
     #_exec_notebook(notebook_path)
     nb, errors = _process_notebook(notebook_path)
 
