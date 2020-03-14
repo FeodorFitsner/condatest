@@ -17,7 +17,7 @@ def _exec_notebook(path):
                 "--ExecutePreprocessor.timeout=120",
                 "--ExecutePreprocessor.kernel_name=python3",
                 #"--output", fout.name , path]
-                "--output", os.getcwd() + "/temp102218" , path]
+                "--output", os.getcwd() + "/temp031420" , path]
         print(" ".join(args))
         subprocess.check_call(args)
     return
@@ -50,7 +50,7 @@ def _process_notebook(path):
         subprocess.check_call(args)
         # seek() sets the file's current position.
         fout.seek(0)
-        nb = nbformat.read(os.getcwd() + "/temp110518.ipynb", nbformat.current_nbformat)
+        nb = nbformat.read(os.getcwd() + "/temp031420.ipynb", nbformat.current_nbformat)
 
     #errors = [output for cell in nb.cells if "outputs" in cell
     #            for output in cell["outputs"]\
