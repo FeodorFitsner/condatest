@@ -43,6 +43,7 @@ test_script:
 
 # Build the docs
   - cd sphinx_gallery
+  - ECHO path
   - make html
   # The Makefile doesn't work directly on Windows PowerShell because of
   # slashes (but will work e.g. in Msys-git), so for now do these manually
@@ -52,7 +53,7 @@ test_script:
   #- sphinx-build -b html -d _build\doctrees . _build\html
 
 artifacts:
-  - path: docs\_build\html
+  - path: _build\html
 
 #on_success:
 #  - "coveralls"
