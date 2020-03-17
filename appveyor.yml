@@ -30,6 +30,7 @@ install:
   - pip install nbconvert
   - pip install jupyter_client
   - pip install ipykernel
+  - pip install -U pytest
   # - pip install ipython
   # - pip install pandas
 
