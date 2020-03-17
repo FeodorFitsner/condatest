@@ -18,6 +18,8 @@ install:
   - conda info -a 
   - conda config --add channels bashtage
   - conda config --add channels conda-forge
+  - "powershell ci-helpers/appveyor/install-miniconda.ps1"
+  - "conda activate test"
   - conda install arch -y
   - "conda create -q -n test-environment python=%PYTHON_VERSION% numpy python-dateutil pyparsing pytz tornado cycler tk libpng zlib freetype pandas ipython scipy flake8 tabulate matplotlib sphinx" 
   #- activate matplotlib_build
