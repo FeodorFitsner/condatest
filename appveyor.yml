@@ -50,10 +50,13 @@ test_script:
   #- sphinx-build -D plot_gallery=0 -b html -d _build\doctrees . _build\html
   # make html
   #- sphinx-build -b html -d _build\doctrees . _build\html
+  
+cache:
+  - _build/html
 
 artifacts:
   # pushing entire folder as a zip archive
-  - path: html_files
+  #- path: html_files
 
 #on_success:
 #  - "coveralls"
