@@ -6,6 +6,7 @@ environment:
   matrix: 
     - PYTHON: "C:\\Python36-x64"
       MINICONDA: C:\Miniconda3
+      APPVEYOR_CACHE_SKIP_RESTORE: true
 
 init: 
   - "ECHO %PYTHON_VERSION% %MINICONDA%"
