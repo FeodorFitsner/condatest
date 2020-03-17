@@ -1,7 +1,7 @@
 build: true
-  verbosity: detailed
 
 environment: 
+  verbosity: detailed
   matrix: 
     - PYTHON: "C:\\Python36-x64"
       MINICONDA: C:\Miniconda3
