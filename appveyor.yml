@@ -52,7 +52,7 @@ test_script:
   #- sphinx-build -b html -d _build\doctrees . _build\html
   
 cache:
-  - _build/html
+  - sphinx_gallery/_build/html
 
 artifacts:
   # pushing entire folder as a zip archive
