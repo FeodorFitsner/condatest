@@ -19,7 +19,7 @@ install:
   - conda config --add channels bashtage
   - conda config --add channels conda-forge
   - conda install arch -y
-  - "conda create -q -n test-environment python=%PYTHON_VERSION% numpy python-dateutil pyparsing pytz tornado cycler tk libpng zlib freetype pandas ipython scipy flake8 tabulate matplotlib" 
+  - "conda create -q -n test-environment python=%PYTHON_VERSION% numpy python-dateutil pyparsing pytz tornado cycler tk libpng zlib freetype pandas ipython scipy flake8 tabulate matplotlib sphinx" 
   #- activate matplotlib_build
   - activate test-environment 
   - python -m pip install --upgrade pip
@@ -37,6 +37,18 @@ test_script:
 #  - python run_all_tests.py
   - python ./tests/OrbitalElementsFromCartState_test.py
   - python ./tests/notebook_test.py
+
+# Build the docs
+  - cd doc
+  # The Makefile doesn't work directly on Windows PowerShell because of
+  # slashes (but will work e.g. in Msys-git), so for now do these manually
+  # make html-noplot
+  - sphinx-build -D plot_gallery=0 -b html -d _build\doctrees . _build\html
+  # make html
+  - sphinx-build -b html -d _build\doctrees . _build\html
+
+artifacts:
+  - path: doc\_build\html
 
 #on_success:
 #  - "coveralls"
