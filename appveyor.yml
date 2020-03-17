@@ -34,7 +34,8 @@ install:
   # - pip install pandas
 
 test_script: 
-  - pytest --tb=short sphinx_gallery
+  - python -m pytest sphinx_gallery
+  #- pytest --tb=short sphinx_gallery
 #  - python run_all_tests.py
   - python ./tests/OrbitalElementsFromCartState_test.py
   - python ./tests/notebook_test.py
