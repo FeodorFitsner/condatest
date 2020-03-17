@@ -1,4 +1,4 @@
-build: script
+build: false #script
 
 environment: 
   verbosity: detailed
@@ -56,17 +56,20 @@ cache:
 
 artifacts:
   # pushing entire folder as a zip archive
-  - path: sphinx_gallery/_build/html
-  
-deploy:
+  - path: sphinx_gallery/_build/html/*
+
+on_success:
+#  You can use this step to upload your artifacts to a public website.
+#  See Appveyor's documentation for more details. Or you can simply
+#  access your wheels from the Appveyor "artifacts" tab for your build. 
 # Deploy to GitHub Releases
   - provider: BitBucket
     artifact: /.*/           # upload all packages to release assets
-    draft: false
-    prerelease: false
+    #draft: false
+    #prerelease: false
     on:
       branch: master                # release from master branch only
-      APPVEYOR_REPO_TAG: true       # deploy on tag push only
+      #APPVEYOR_REPO_TAG: true       # deploy on tag push only
 #on_success:
 #  - "coveralls"
 # https://packaging.python.org/guides/supporting-windows-using-appveyor/
