@@ -57,8 +57,17 @@ cache:
 
 artifacts:
   # pushing entire folder as a zip archive
-  #- path: html_files
-
+  - path: sphinx_gallery/_build/html
+  
+deploy:
+# Deploy to GitHub Releases
+  - provider: BitBucket
+    artifact: /.*/           # upload all packages to release assets
+    draft: false
+    prerelease: false
+    on:
+      branch: master                # release from master branch only
+      APPVEYOR_REPO_TAG: true       # deploy on tag push only
 #on_success:
 #  - "coveralls"
 # https://packaging.python.org/guides/supporting-windows-using-appveyor/
