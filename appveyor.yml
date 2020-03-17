@@ -1,6 +1,5 @@
-# https://help.appveyor.com/discussions/questions/6802-appveyor-with-conda
-build: false
-
+build: true
+  verbosity: detailed
 
 environment: 
   matrix: 
