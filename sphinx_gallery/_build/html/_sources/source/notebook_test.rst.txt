@@ -1,0 +1,7 @@
+notebook\_test module
+=====================
+
+.. automodule:: notebook_test
+   :members:
+   :undoc-members:
+   :show-inheritance:

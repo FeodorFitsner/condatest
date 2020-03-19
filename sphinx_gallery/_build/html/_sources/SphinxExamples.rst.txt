@@ -1,0 +1,29 @@
+#Sphinx Syntax Examples
+Header Type 1 -- Top of Page Header
+***********************************
+There should only be one of these per page. This will also be used for 
+chapters when converting to pdf.
+
+Header Type 2 -- Page Sections: Sphinx Header Examples
+======================================================
+
+Header Type 3 -- Subsection: Sphinx Links
+------------------------------------------
+
+H4 -- Subsubsection: URL links
+++++++++++++++++++++++++++++++
+Urls are automatically linked, https://see.com
+
+H4 -- Subsubsection: Anchor links
+++++++++++++++++++++++++++++++++++
+Anchor links jump to another section in the same .rst file.
+'Table of Contents'_
+
+
+
+
+Header Type 3 -- Subsection: Paragraph Markup
+----------------------------------------------
+H4 -- Subsubsection: SEE File Information Template
+++++++++++++++++++++++++++++++++++++++++++++++++++
+

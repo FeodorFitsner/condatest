@@ -1,20 +1,5 @@
-'''
-    test_OrbitalElementsFromCartState.py
-    Unit test module
+#DocString with Sphinx syntax
 
-    from terminal: home/adam_home/tests
-                   python -m unittest test_OrbitalElementsFromCartState.py
-
-                   OR
-
-                   home/adam_home/tests
-                   python test_OrbitalElementsFromCartState.py
-                   [when if __name__ block is available on line 64]
-
-    METHOD LIST:    test_OrbitPeriodFromSma
-                    test_SemimajorAxisFromCartState
-                    test_OrbitEnergyFromCartState
-'''
 
 import unittest
 import OrbitalElementsFromCartState
@@ -24,8 +9,24 @@ sys.path.append(expanduser("~") + "/adam_home/SEE_functions")
 
 
 class Test_OrbitalElementsFromCartState(unittest.TestCase):
+    '''
+    .. module:: Orbital Elements from Cartesian State unit tests
+    .. moduleauthor:: Emmie King <emmie@see.com>
+    .. versionadded:: 1
+
+    '''
 
     def test_OrbitPeriodFromSma(self):
+        """This function does something.
+
+        :param name: The name to use.
+        :type name: str.
+        :param state: Current state to be in.
+        :type state: bool.
+        :returns:  int -- the return code.
+        :raises: AttributeError, KeyError
+
+        """
         # AlmostEqual rounding to the 8th decimal
         # solution from python method
         # self.assertAlmostEqual(OrbitalElementsFromCartState.OrbitPeriodFromSma(
