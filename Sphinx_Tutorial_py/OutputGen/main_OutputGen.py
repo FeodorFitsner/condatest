@@ -1,6 +1,6 @@
 
 """
-mainOrbE.py
+main_OutputGen.py
 ====================================
 The core module of my example project
 """
