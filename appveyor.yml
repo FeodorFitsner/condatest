@@ -42,7 +42,7 @@ test_script:
   - python ./tests/notebook_test.py
 
 # Build the docs
-  - cd sphinx_gallery
+  - cd Sphinx_Tutorial_Docs
   - make html
   # The Makefile doesn't work directly on Windows PowerShell because of
   # slashes (but will work e.g. in Msys-git), so for now do these manually
@@ -52,11 +52,11 @@ test_script:
   #- sphinx-build -b html -d _build\doctrees . _build\html
   
 cache:
-  - sphinx_gallery/_build/html
+  - Sphinx_Tutorial_Docs/build/html
 
 artifacts:
   # pushing entire folder as a zip archive
-  - path: sphinx_gallery/_build/html/*
+  - path: Sphinx_Tutorial_Docs/build/html/*
 
 on_success:
 #  You can use this step to upload your artifacts to a public website.
