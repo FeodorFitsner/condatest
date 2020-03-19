@@ -2,7 +2,7 @@
 """
 main_OutputGen.py
 ====================================
-The core module of my example project
+Dummy file for Output Generation
 """
 
 def about_me(your_name):
