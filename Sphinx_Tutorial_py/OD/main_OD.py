@@ -2,7 +2,7 @@
 """
 main_OD.py
 ====================================
-The core module of my example project
+Dummy file to fill in Orbit Determination
 """
 
 def about_me(your_name):
