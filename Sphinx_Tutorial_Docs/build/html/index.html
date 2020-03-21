@@ -56,6 +56,99 @@ utilities are setup as well. One of those,</p>
 </td></tr></table></div>
 <p>will generate a basic configuration file and directory
 structure for your documentation.</p>
+<p>Run this command at the base directory of your project
+(e.g. the BitBucket repo root). In my example, I have
+set up a public BitBucket repo under my personal name
+for development called “PublicAppVeyor”. It will ask
+you a number of questions that will determine it’s actions.</p>
+<div class="highlight-html notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36</pre></div></td><td class="code"><div class="highlight"><pre><span></span>Welcome to the Sphinx 2.4.4 quickstart utility.
+
+Please enter values for the following settings (just press Enter to
+accept a default value, if one is given in brackets).
+
+Selected root path: .
+
+You have two options for placing the build directory for Sphinx output.
+Either, you use a directory &quot;_build&quot; within the root path, or you separate
+&quot;source&quot; and &quot;build&quot; directories within the root path.
+&gt; Separate source and build directories (y/n) [n]:     **y**
+
+The project name will occur in several places in the built documentation.
+&gt; Project name:     **Sphinx_Tutorial_Docs**
+&gt; Author name(s):    **Emmie King**
+&gt; Project release []:      **press enter to accept the default value**
+
+If the documents are to be written in a language other than English,
+you can select a language here by its language code. Sphinx will then
+translate text that it generates into that language.
+
+For a list of supported codes, see
+https://www.sphinx-doc.org/en/master/usage/configuration.html#confval-language.
+&gt; Project language [en]:     **en**
+
+Creating file .\source\conf.py.
+Creating file .\source\index.rst.
+Creating file .\Makefile.
+Creating file .\make.bat.
+
+Finished: An initial directory structure has been created.
+
+You should now populate your master file .\source\index.rst and create other documentation
+source files. Use the Makefile to build the docs, like so:
+    make builder
+where &quot;builder&quot; is one of the supported builders, e.g. html, latex or linkcheck.
+</pre></div>
+</td></tr></table></div>
+<p>After the program has run, you’ll notice that the following
+files and folders have been created in “PublicAppVeyor”:</p>
+<ul class="simple">
+<li><p>build folder</p></li>
+<li><p>source folder</p></li>
+<li><p>make.bat</p></li>
+<li><p>Makefile</p></li>
+</ul>
+<p>I decided to create a new folder with the Project Name that you added above and
+to create a new folder with the base name of the Project and append _py.</p>
+<ul class="simple">
+<li><p>Sphinx_Tutorial_Docs [for Sphinx documentation files]</p></li>
+<li><p>Sphinx_Tutorial_py [for python scripts]</p></li>
+</ul>
+<p>I then moved the 2 sphinx folders and 2 sphinx files into Sphinx_Tutorial_Docs.</p>
 <span class="target" id="module-Sphinx_Tutorial_py.OD.main_OD"></span><div class="section" id="main-od-py">
 <h2>main_OD.py<a class="headerlink" href="#main-od-py" title="Permalink to this headline">¶</a></h2>
 <p>Dummy file to fill in Orbit Determination</p>
