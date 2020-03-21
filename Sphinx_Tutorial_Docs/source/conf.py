@@ -15,6 +15,7 @@ import sys
 # You will need to indicate in the conf.py file that Sphinx must go “up” 
 # one directory level to find the Python package.
 sys.path.insert(0, os.path.abspath('../..'))
+sys.path.insert(0, os.path.abspath('C:\\projects\\publicappveyor\\Sphinx_Tutorial_Docs'))
 sys.path.insert(0, os.path.abspath('C:\\projects\\publicappveyor\\Sphinx_Tutorial_py'))
 #sys.path.insert(0, os.path.abspath('C:\\Users\\emmie\\OneDrive\\FDS\\Sphinx_Tutorial_py\\'))
 

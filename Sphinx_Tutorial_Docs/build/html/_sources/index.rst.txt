@@ -3,13 +3,13 @@ Welcome to SEE's Getting Started with Sphinx documentation!
 
 
 
-.. automodule:: OD.main_OD
+.. automodule:: Sphinx_Tutorial_py.OD.main_OD
     :members:
 
-.. automodule:: IOD.main_IOD
+.. automodule:: Sphinx_Tutorial_py.IOD.main_IOD
     :members:
 
-.. automodule:: OutputGen.main_OutputGen
+.. automodule:: Sphinx_Tutorial_py.OutputGen.main_OutputGen
     :members:
 
 
