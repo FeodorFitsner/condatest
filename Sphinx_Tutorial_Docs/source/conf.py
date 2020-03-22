@@ -16,8 +16,9 @@ import sys
 # one directory level to find the Python package.
 sys.path.insert(0, os.path.abspath('../..'))
 sys.path.insert(0, os.path.abspath('C:\\projects\\publicappveyor\\Sphinx_Tutorial_Docs'))
+sys.path.insert(0, os.path.abspath('C:\\projects\\publicappveyor\\Sphinx_Tutorial_Docs\\build\\html'))
 sys.path.insert(0, os.path.abspath('C:\\projects\\publicappveyor\\Sphinx_Tutorial_py'))
-#sys.path.insert(0, os.path.abspath('C:\\Users\\emmie\\OneDrive\\FDS\\Sphinx_Tutorial_py\\'))
+sys.path.insert(0, os.path.abspath('C:\\Users\\emmie\\OneDrive\\FDS\\publicappveyor\\Sphinx_Tutorial_Docs'))
 
 
 # -- Project information -----------------------------------------------------
@@ -57,8 +58,13 @@ html_theme_options = {
     "rightsidebar": "false",
     "relbarbgcolor": "black",
     "sidebarbgcolor": 'grey',
+    "body_max_width": "none"
 }
 # Add any paths that contain custom static files (such as style sheets) here,
 # relative to this directory. They are copied after the builtin static files,
 # so a file named "default.css" will overwrite the builtin "default.css".
 html_static_path = ['_static']
+
+#html_additional_pages = {
+#    'RepoSetup': 'BitBucketSetup.html',
+#}
