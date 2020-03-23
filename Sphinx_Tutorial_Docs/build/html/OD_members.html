@@ -37,26 +37,76 @@
             
   <div class="section" id="module-Sphinx_Tutorial_py.OD.main_OD">
 <span id="welcome-to-see-s-orbit-determination-member-documentation"></span><h1>Welcome to SEE’s Orbit Determination Member documentation!<a class="headerlink" href="#module-Sphinx_Tutorial_py.OD.main_OD" title="Permalink to this headline">¶</a></h1>
-<div class="section" id="main-od-py">
-<h2>main_OD.py<a class="headerlink" href="#main-od-py" title="Permalink to this headline">¶</a></h2>
-<p>Dummy file to fill in Orbit Determination</p>
-<dl class="class">
-<dt id="Sphinx_Tutorial_py.OD.main_OD.ExampleClass">
-<em class="property">class </em><code class="sig-prename descclassname">Sphinx_Tutorial_py.OD.main_OD.</code><code class="sig-name descname">ExampleClass</code><span class="sig-paren">(</span><em class="sig-param">name</em><span class="sig-paren">)</span><a class="headerlink" href="#Sphinx_Tutorial_py.OD.main_OD.ExampleClass" title="Permalink to this definition">¶</a></dt>
-<dd><p>An example docstring for a class definition.</p>
-<dl class="method">
-<dt id="Sphinx_Tutorial_py.OD.main_OD.ExampleClass.about_self">
-<code class="sig-name descname">about_self</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Sphinx_Tutorial_py.OD.main_OD.ExampleClass.about_self" title="Permalink to this definition">¶</a></dt>
-<dd><p>Return information about an instance created from ExampleClass.</p>
-</dd></dl>
-
+<div class="section" id="orbitalelementsfromcartstate-py">
+<h2>OrbitalElementsFromCartState.py<a class="headerlink" href="#orbitalelementsfromcartstate-py" title="Permalink to this headline">¶</a></h2>
+<p>Compute orbital elements from cartesian state vectors.</p>
+<dl class="function">
+<dt id="Sphinx_Tutorial_py.OD.main_OD.OrbitEnergyFromCartState">
+<code class="sig-prename descclassname">Sphinx_Tutorial_py.OD.main_OD.</code><code class="sig-name descname">OrbitEnergyFromCartState</code><span class="sig-paren">(</span><em class="sig-param">rMag</em>, <em class="sig-param">vMag</em>, <em class="sig-param">Gm</em><span class="sig-paren">)</span><a class="headerlink" href="#Sphinx_Tutorial_py.OD.main_OD.OrbitEnergyFromCartState" title="Permalink to this definition">¶</a></dt>
+<dd><p>Summary Line….</p>
+<p>Extended description of function.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>rMag</strong> – scalar position magnitude</p></li>
+<li><p><strong>vMag</strong> (<em>(</em><em>m/s</em><em>)</em>) – scalar velocity magnitude</p></li>
+<li><p><strong>Gm</strong> (<em>(</em><em>m^3/sec^2</em><em>)</em>) – gravitational param</p></li>
+</ul>
+</dd>
+<dt class="field-even">Yields</dt>
+<dd class="field-even"><p><strong>Orbit Energy</strong> (<em>(m^2/s^2)</em>) – orbit energy from Cartesian state</p>
+</dd>
+<dt class="field-odd">Raises</dt>
+<dd class="field-odd"><p><strong>ZeroDivisionError</strong> – if <code class="docutils literal notranslate"><span class="pre">rMag</span></code> is equal to 0</p>
+</dd>
+</dl>
 </dd></dl>
 
 <dl class="function">
-<dt id="Sphinx_Tutorial_py.OD.main_OD.about_me">
-<code class="sig-prename descclassname">Sphinx_Tutorial_py.OD.main_OD.</code><code class="sig-name descname">about_me</code><span class="sig-paren">(</span><em class="sig-param">your_name</em><span class="sig-paren">)</span><a class="headerlink" href="#Sphinx_Tutorial_py.OD.main_OD.about_me" title="Permalink to this definition">¶</a></dt>
-<dd><p>Return the most important thing about a person.
-:param your_name: A string indicating the name of the person.</p>
+<dt id="Sphinx_Tutorial_py.OD.main_OD.OrbitPeriodFromSma">
+<code class="sig-prename descclassname">Sphinx_Tutorial_py.OD.main_OD.</code><code class="sig-name descname">OrbitPeriodFromSma</code><span class="sig-paren">(</span><em class="sig-param">sma</em>, <em class="sig-param">Gm</em><span class="sig-paren">)</span><a class="headerlink" href="#Sphinx_Tutorial_py.OD.main_OD.OrbitPeriodFromSma" title="Permalink to this definition">¶</a></dt>
+<dd><p>Summary Line….</p>
+<p>Extended description of function.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>sma</strong> – semimajor axis</p></li>
+<li><p><strong>Gm</strong> (<em>(</em><em>m^3/sec^2</em><em>)</em>) – gravitational param</p></li>
+</ul>
+</dd>
+<dt class="field-even">Yields</dt>
+<dd class="field-even"><p><strong>Orbit Period</strong> (<em>(s)</em>) – orbit period from semimajor axis</p>
+</dd>
+<dt class="field-odd">Raises</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>ZeroDivisionError</strong> – if <code class="docutils literal notranslate"><span class="pre">Gm</span></code> is equal to zero</p></li>
+<li><p><strong>ValueError</strong> – if <code class="docutils literal notranslate"><span class="pre">Gm</span></code> or <code class="docutils literal notranslate"><span class="pre">sma</span></code> are negative</p></li>
+<li><p><strong>ValueError</strong> – if <code class="docutils literal notranslate"><span class="pre">OrbitPeriodFromSma</span></code> is negative or zero</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="Sphinx_Tutorial_py.OD.main_OD.SemimajorAxisFromCartState">
+<code class="sig-prename descclassname">Sphinx_Tutorial_py.OD.main_OD.</code><code class="sig-name descname">SemimajorAxisFromCartState</code><span class="sig-paren">(</span><em class="sig-param">rMag</em>, <em class="sig-param">vMag</em>, <em class="sig-param">Gm</em><span class="sig-paren">)</span><a class="headerlink" href="#Sphinx_Tutorial_py.OD.main_OD.SemimajorAxisFromCartState" title="Permalink to this definition">¶</a></dt>
+<dd><p>Summary Line….</p>
+<p>Extended description of function.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>rMag</strong> – scalar position magnitude</p></li>
+<li><p><strong>vMag</strong> (<em>(</em><em>m/s</em><em>)</em>) – scalar velocity magnitude</p></li>
+<li><p><strong>Gm</strong> (<em>(</em><em>m^3/sec^2</em><em>)</em>) – gravitational param</p></li>
+</ul>
+</dd>
+<dt class="field-even">Yields</dt>
+<dd class="field-even"><p><strong>Semimajor Axis</strong> (<em>(m)</em>) – semimajor axis from Cartesian state</p>
+</dd>
+<dt class="field-odd">Raises</dt>
+<dd class="field-odd"><p><strong>ZeroDivisionError</strong> – if <code class="docutils literal notranslate"><span class="pre">orbitEnergy</span></code> is equal to zero</p>
+</dd>
+</dl>
 </dd></dl>
 
 </div>
@@ -74,7 +124,7 @@
   <h3><a href="index.html">Table of Contents</a></h3>
   <ul>
 <li><a class="reference internal" href="#">Welcome to SEE’s Orbit Determination Member documentation!</a><ul>
-<li><a class="reference internal" href="#main-od-py">main_OD.py</a></li>
+<li><a class="reference internal" href="#orbitalelementsfromcartstate-py">OrbitalElementsFromCartState.py</a></li>
 </ul>
 </li>
 </ul>
