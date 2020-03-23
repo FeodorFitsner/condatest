@@ -162,7 +162,7 @@ At this point, we can actually run the build process to generate our
 documentation but it would have the generic layout.
 
 .. image:: _static/basic.png
-    :width: 500px
+    :width: 750px
     :align: center
 
 To move forward, we will have to do some minor modifications to our

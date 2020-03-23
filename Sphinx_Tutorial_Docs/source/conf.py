@@ -66,5 +66,9 @@ html_theme_options = {
 html_static_path = ['_static']
 
 #html_additional_pages = {
-#    'RepoSetup': 'BitBucketSetup.html',
+#    'RepoSetup': '../build/html/BitBucketSetup.html',
+#    'CISetup': '../AppVeyorSetup.html',
+#    'OD': '../OD_members.html',
+#    'IOD': '../IOD_members.html',
+#    'OPGen': '../OutputGen_members.html',
 #}
