@@ -1,31 +1,24 @@
 """
 OrbitalElementsFromCartState.py
 ================================
+Compute orbital elements from cartesian state vectors.
 """
 
-'''
-    OrbitalElementsFromCartState.py
-    Compute orbital elements from cartesian state vectors.
-
-    INPUT: TBD
-    OUTPUT: TBD
-
-    METHOD LIST:    OrbitEnergyFromCartState
-                    SemimajorAxisFromCartState
-                    OrbitPeriodFromSma
-'''
 
 import math
 
-
 def OrbitEnergyFromCartState(rMag, vMag, Gm):
-    ''' OrbitEnergyFromCartState:
-        INPUT:  rMag:   scalar position magnitude (meters)
-                vMag:   scalar velocity magnitude (meters per second)
-                Gm:     gravitational param (m^3/sec^2)
+    """ 
+        Parameters
+        ----------
+        rMag:   scalar position magnitude (meters)
+        vMag:   scalar velocity magnitude (meters per second)
+        Gm:     gravitational param (m^3/sec^2)
+
 
         OUTPUT: orbit energy from Cartesian state (m^2/s^2)
-    '''
+
+    """
 
     if rMag == 0:
         raise ZeroDivisionError('Can not divide by zero')
