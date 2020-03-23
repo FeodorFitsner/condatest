@@ -15,7 +15,7 @@ This tutorial will be using the Windows `git command line tool <https://www.atla
 Run the following commands to configure your Git username and email.
 
 
-**$** ``git congif --global user.name "EmmieKing"``    [BitBucket UserName]
+**$** ``git config --global user.name "EmmieKing"``    [BitBucket UserName]
 
 **$** ``git config --global user.email "Emmie@SEE.com"``     [Bitbucket Email]
 
@@ -47,4 +47,5 @@ Add your changes to the BitBucket remote repository:
 **$** ``git push``
 
 Update your local files from the BitBucket remote repository:
+
 **$** ``git pull``

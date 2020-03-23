@@ -37,6 +37,30 @@
             
   <div class="section" id="welcome-to-see-s-setting-up-appveyor-continuous-integration-documentation">
 <h1>Welcome to SEE’s Setting up AppVeyor Continuous Integration documentation!<a class="headerlink" href="#welcome-to-see-s-setting-up-appveyor-continuous-integration-documentation" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="setup-appveyor-account">
+<h2>1. Setup AppVeyor Account<a class="headerlink" href="#setup-appveyor-account" title="Permalink to this headline">¶</a></h2>
+<p><a class="reference external" href="https://ci.appveyor.com/signup">AppyVeyor link:</a> choose the <strong>FREE - for open-source projects</strong> plan.</p>
+</div>
+<div class="section" id="link-with-bitbucket">
+<h2>2. Link with BitBucket<a class="headerlink" href="#link-with-bitbucket" title="Permalink to this headline">¶</a></h2>
+<p>Select <code class="docutils literal notranslate"><span class="pre">+</span> <span class="pre">New</span> <span class="pre">Projects</span></code></p>
+<p>Select <code class="docutils literal notranslate"><span class="pre">Bitbucket</span></code> on the left sidebar.</p>
+<p>Authorize AppVeyor as OAuth 2.0 app so it can act on behalf of
+&lt;your account name&gt; Bitbucket account with account, team,
+repository, pullrequest, webhook permissions.</p>
+<p>Find the repository in your repo list and click <code class="docutils literal notranslate"><span class="pre">+</span> <span class="pre">Add</span></code>.</p>
+<p>Make sure that your <code class="docutils literal notranslate"><span class="pre">appveyor.yml</span></code> is in the root of your repository.</p>
+</div>
+<div class="section" id="check-current-build">
+<h2>3. Check Current Build<a class="headerlink" href="#check-current-build" title="Permalink to this headline">¶</a></h2>
+<p>Select <code class="docutils literal notranslate"><span class="pre">Projects</span></code></p>
+<p>Select the project that you added, e.g. <code class="docutils literal notranslate"><span class="pre">PublicAppVeyor</span></code></p>
+<p>Select ‘’Current Build`` to see the AppVeyor console.</p>
+<p>Green = Passed</p>
+<p>Red = Failed</p>
+<p>Yellow = In Progress</p>
+<a class="reference internal image-reference" href="_images/AppveyorBuild.png"><img alt="_images/AppveyorBuild.png" class="align-center" src="_images/AppveyorBuild.png" style="width: 750px;" /></a>
+</div>
 </div>
 
 
@@ -48,6 +72,16 @@
             <p class="logo"><a href="index.html">
               <img class="logo" src="_static/logo-see-with-tagline.png" alt="Logo"/>
             </a></p>
+  <h3><a href="index.html">Table of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">Welcome to SEE’s Setting up AppVeyor Continuous Integration documentation!</a><ul>
+<li><a class="reference internal" href="#setup-appveyor-account">1. Setup AppVeyor Account</a></li>
+<li><a class="reference internal" href="#link-with-bitbucket">2. Link with BitBucket</a></li>
+<li><a class="reference internal" href="#check-current-build">3. Check Current Build</a></li>
+</ul>
+</li>
+</ul>
+
   <div role="note" aria-label="source link">
     <h3>This Page</h3>
     <ul class="this-page-menu">
