@@ -274,6 +274,9 @@ Double click on ``Sphinx_Tutorial_Docs/build/html/index.html``
 and you should see the ``main_OD.py`` example added to the generic
 layout.
 
+Before you ``git push`` any changes, I found that moving to the
+root directory, e.g. PublicAppVeyor, first grabs all lower folder changes.
+
 .. _MoreSet-pages:
 
 ==============
