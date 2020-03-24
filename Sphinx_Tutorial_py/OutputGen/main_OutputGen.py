@@ -3,6 +3,7 @@
 main_OutputGen.py
 ====================================
 Dummy file for Output Generation
+https://developer.lsst.io/python/numpydoc.html
 """
 
 def about_me(your_name):
