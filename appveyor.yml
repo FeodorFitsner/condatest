@@ -1,5 +1,8 @@
 build: false #script
 
+image:
+  - Visual Studio 2019
+
 environment: 
   verbosity: detailed
   matrix: 
