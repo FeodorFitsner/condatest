@@ -3,9 +3,9 @@ build: false #script
 environment: 
   verbosity: detailed
   matrix: 
-    - PYTHON: "C:\\Python36-x64"
+    - PYTHON: "C:\\Python38-x64"
       MINICONDA: C:\Miniconda3
-      APPVEYOR_CACHE_SKIP_RESTORE: true
+      #APPVEYOR_CACHE_SKIP_RESTORE: true
 
 init: 
   - "ECHO %PYTHON_VERSION% %MINICONDA%"
@@ -22,29 +22,30 @@ install:
   - "conda create -q -n test-environment python=%PYTHON_VERSION% numpy python-dateutil pyparsing pytz tornado cycler tk libpng zlib freetype pandas ipython scipy flake8 tabulate matplotlib sphinx" 
   #- activate matplotlib_build
   - activate test-environment 
-  - python -m pip install --upgrade pip
-  - conda install pyqt
-  - pip install pywin32
-  - pip install comtypes
-  - pip install nbformat
-  - pip install nbconvert
-  - pip install jupyter_client
-  - pip install ipykernel
-  - pip install -U pytest
-  - pip install pygments
+  #- python -m pip install --upgrade pip
+  #- conda install pyqt
+  #- pip install pywin32
+  #- pip install comtypes
+  #- pip install nbformat
+  #- pip install nbconvert
+  #- pip install jupyter_client
+  #- pip install ipykernel
+  #- pip install -U pytest
+  #- pip install pygments
   # - pip install ipython
   # - pip install pandas
 
 test_script: 
+  - flake8 --ignore=F722,F821,W504,W191,F401 --max-line-length=101 .
   #- python -m pytest sphinx_gallery
   #- pytest --tb=short sphinx_gallery
 #  - python run_all_tests.py
-  - python ./tests/OrbitalElementsFromCartState_test.py
-  - python ./tests/notebook_test.py
+  #- python ./tests/OrbitalElementsFromCartState_test.py
+  #- python ./tests/notebook_test.py
 
 # Build the docs
-  - cd Sphinx_Tutorial_Docs
-  - make html
+  #- cd Sphinx_Tutorial_Docs
+  #- make html
   # The Makefile doesn't work directly on Windows PowerShell because of
   # slashes (but will work e.g. in Msys-git), so for now do these manually
   # make html-noplot
@@ -53,23 +54,23 @@ test_script:
   #- sphinx-build -b html -d _build\doctrees . _build\html
   
 cache:
-  - Sphinx_Tutorial_Docs/build/html
+  #- Sphinx_Tutorial_Docs/build/html
 
 artifacts:
   # pushing entire folder as a zip archive
-  - path: Sphinx_Tutorial_Docs/build/html/*
+  #- path: Sphinx_Tutorial_Docs/build/html/*
 
 on_success:
 #  You can use this step to upload your artifacts to a public website.
 #  See Appveyor's documentation for more details. Or you can simply
 #  access your wheels from the Appveyor "artifacts" tab for your build. 
 # Deploy to GitHub Releases
-  - provider: BitBucket
-    artifact: /.*/           # upload all packages to release assets
+  #- provider: BitBucket
+  #  artifact: /.*/           # upload all packages to release assets
     #draft: false
     #prerelease: false
-    on:
-      branch: master                # release from master branch only
+  #  on:
+  #    branch: master                # release from master branch only
       #APPVEYOR_REPO_TAG: true       # deploy on tag push only
 #on_success:
 #  - "coveralls"
