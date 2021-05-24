@@ -7,7 +7,7 @@ environment:
   verbosity: detailed
   matrix: 
     - PYTHON: "C:\\Python38-x64"
-      PYTHON_VERSION1: 3.7
+      PYTHON_VERSION: 3.7
       MINICONDA: C:\Miniconda3
       #APPVEYOR_CACHE_SKIP_RESTORE: true
 
